@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Chatroom</title>
+</head>
+<body>
+    <h4 id="userName"></h4>
+  <div id="chat">
+  
+  <input type="text" id="message" placeholder="Type your message here...">
+  <button id="send">Send</button>
+  <P id="sentMessagePara">:</P>
+</div>
+
+
+
+  <script>
+    const enteredUserName = prompt("Enter your Name")
+    const userName = document.getElementById('userName')
+    let sentMessagePara = document.querySelector('#sentMessagePara')
+    
+    let message = document.getElementById('message')
+    const send = document.getElementById('send')
+        // GREETING 
+    // userName.innerText=`Hi, ${enterUserName} Welcome`;
+    // Function TO DISPLAY MESSAGE ON SCREEN AFTER SEND 
+    const displayMessage=()=>{
+        console.log("clicked")
+
+      sentMessagePara.innerText+=enteredUserName+':'+ message.value+ '\n';
+    }
+    send.addEventListener('click', function(){
+      if(message.value.length>0){
+        displayMessage()
+      }
+      else{
+      alert("Null")
+      }
+    })
+
+
+
+
+    
+    console.log(sentMessagePara.innerText)
+    
+
+
+  </script>
+</body>
+</html>
